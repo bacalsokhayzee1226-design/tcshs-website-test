@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Toledo City Science High School | Division of Toledo City, Cebu</title>
+<meta name="description" content="Toledo City Science High School, Division of Toledo City, Cebu, Philippines. Science, technology, engineering and mathematics education since 1996." />
+<meta name="keywords" content="Toledo City Science High School, TCSHS, Science High School Cebu, Toledo City, Division of Toledo City, STEM" />
+<meta property="og:title" content="Toledo City Science High School" />
+<meta property="og:description" content="A public science high school in Toledo City, Cebu." />
+<meta property="og:type" content="website" />
+<!-- TODO: replace with your real image/URL -->
+<meta property="og:image" content="https://placehold.co/1200x630/05475b/ffffff?text=TCSHS" />
+<link rel="icon" type="image/png" href="images/favicon.png?v=3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+:root{--deep:#05475b;--mid:#0b6a86;--sky:#2b94b8;--ice:#e6f3f8;--ink:#0a2a35;--white:#fff}
+/* ================= INTRO LOADER (exact DOST copy) ================= */
+#intro-loader{
+  position:fixed; inset:0; z-index:99999;
+  background:#f1f1f1;
+  display:flex; align-items:center; justify-content:center;
+  opacity:1;
+  transition:opacity .7s ease-in-out;   /* same timing as DOST */
+}
+#intro-loader.hide{
+  opacity:0;
+  pointer-events:none;
+}
+/* DOST's shimmer, copied from their output.css */
+.shimmer-mask{
+  mask-image: linear-gradient(60deg, transparent 40%, white 50%, transparent 60%);
+  -webkit-mask-image: linear-gradient(-60deg, transparent 30%, rgba(255,255,255,0.1) 40%, rgba(255,255,255,0.3) 45%, rgba(255,255,255,0.6) 48%, white 50%, rgba(255,255,255,0.6) 52%, rgba(255,255,255,0.3) 55%, rgba(255,255,255,0.1) 60%, transparent 70%);
+  mask-size: 100% 100%;
+  -webkit-mask-size: 200% 100%;
+  animation: sweep-light 4s ease-in-out infinite;
+}
+@keyframes sweep-light{
+  0%{
+    mask-position: 150% 0%;
+    -webkit-mask-position: 140% 0%;
+  }
+  100%{
+    mask-position: -130% 0%;
+    -webkit-mask-position: -50% 0%;
+  }
+}
+
+/* sized by WIDTH so it never looks tiny */
+.intro-image{
+  display:block;
+  width:86vw;          /* phones */
+  max-width:440px;
+  height:auto;
+}
+@media(min-width:768px){
+  .intro-image{ width:62vw; max-width:620px; }   /* tablets */
+}
+@media(min-width:1024px){
+  .intro-image{ width:50vw; max-width:780px; }   /* laptops and desktops */
+}
+body.intro-active{overflow:hidden}
+
+/* website hidden until the intro ends, then 0.7s fade-in like DOST */
+#site{
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .7s ease-in-out;
+}
+#site.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+@media(prefers-reduced-motion:reduce){
+  .shimmer-mask{animation:none; -webkit-mask-image:none; mask-image:none}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Montserrat',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.7;color:var(--ink);background:#f1f1f1}
+a{color:inherit;text-decoration:none}
+img,video{max-width:100%;display:block}
+h1,h2,h3,h4{line-height:1.25;font-weight:600}
+.wrap{width:min(1300px,90%);margin:auto}
+.btn{display:inline-block;padding:.55em 1.5em;border-radius:30px;font:600 16px 'Montserrat',sans-serif;border:2px solid var(--white);background:var(--deep);color:#fff;cursor:pointer;transition:all .3s}
+.btn:hover{background:#fff;color:var(--deep)}
+.btn.light{background:#fff;color:var(--deep);border-color:#fff}
+.btn.light:hover{background:var(--ice)}
+.btn.ghost{background:transparent;color:#fff;border:0;text-decoration:underline;font-size:20px}
+nav a,.brand{text-shadow:0 1px 6px rgba(0,0,0,.6)}
+header.solid{background:var(--deep);box-shadow:0 2px 10px rgba(0,0,0,.25)}
+header.solid nav{background:var(--mid)}
+nav.stuck{position:fixed;top:0;left:0;right:0;background:var(--deep);box-shadow:0 2px 10px rgba(0,0,0,.3);z-index:100}
+@media(max-width:980px){
+ header{position:fixed;background:var(--deep)}
+ nav.stuck{position:static;box-shadow:none}
+}
+
+a:focus-visible,button:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+#site{overflow-x:clip}
+
+/* header */
+header{position:absolute;top:0;left:0;right:0;z-index:100;background:linear-gradient(180deg,rgba(5,71,91,.8),rgba(5,71,91,0));transition:background .3s}
+.top{display:flex;align-items:center;gap:16px;padding:12px 24px;flex-wrap:wrap}
+.top svg,.top img{width:80px;height:auto;flex:none}.brand{color:#fff;font-size:26px;font-weight:600;line-height:1.15;flex:1;min-width:220px}
+.brand small{display:block;font-size:12px;font-weight:400;opacity:.85}
+.top .btn{font-size:15px;padding:.35em 1.1em}
+nav{background:transparent}
+nav ul{list-style:none;display:flex;justify-content:center;flex-wrap:wrap}
+nav li{position:relative}
+nav a{display:block;padding:14px 18px;color:#fff;font-weight:600;font-size:14px;text-transform:uppercase}
+nav a:hover{background:rgba(255,255,255,.12)}
+nav li ul{display:none;position:absolute;left:0;top:100%;min-width:250px;background:var(--deep);flex-direction:column;border-top:3px solid #fff}
+nav li:hover>ul,nav li:focus-within>ul{display:flex}
+nav li ul a{text-transform:none;font-weight:500}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:30px;cursor:pointer;margin-left:auto}
+
+/* hero */
+.hero{position:relative;display:flex;align-items:flex-end;color:#fff;overflow:hidden;
+  height:100vh;height:100svh;
+  min-height:560px;
+  background:linear-gradient(135deg,#05475b,#0b6a86 60%,#2b94b8)}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,71,91,.35) 40%,var(--deep) 100%)}
+.hero .wrap{position:relative;z-index:2;margin:0 auto;padding:0 0 clamp(56px,11vh,120px)}
+.hero h1{font-size:clamp(32px,min(6vw,10vh),68px);font-weight:300;max-width:1000px;margin-bottom:clamp(16px,3vh,28px)}
+.hero h1 strong{font-weight:700}
+
+/* quick links */
+.quick{background:var(--deep);padding:20px 0}
+.quick .wrap{background:#fff;border-radius:6px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px;padding:46px 36px}
+.quick a{display:flex;gap:16px;align-items:flex-start;transition:transform .3s}
+.quick a:hover{transform:translateY(-8px)}
+.ico{flex:none;width:48px;height:48px;border-radius:50%;background:var(--mid);color:#fff;display:grid;place-items:center;font-size:22px}
+.quick h4{font-size:21px;color:var(--deep);text-decoration:underline;margin-bottom:6px}
+
+/* steps */
+.steps{background:linear-gradient(rgba(11,106,134,.82),rgba(11,106,134,.82)),url('images/steps-bg.jpg') center/cover fixed;padding:80px 0;color:#fff}.steps h2{font-size:clamp(34px,5vw,50px);margin-bottom:8px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin:40px 0 20px}
+.step{background:var(--deep);padding:24px;border-radius:5px;box-shadow:6px 6px 18px rgba(0,0,0,.3);transition:box-shadow .3s;font-size:18px}
+.step:hover{box-shadow:6px 6px 0 #1b7fa3}
+.step h4{font-size:24px;text-transform:uppercase;margin-bottom:6px}
+.right{text-align:right}
+
+/* glance */
+/* ================= GLANCE ================= */
+.glance{position:relative;padding:90px 0;overflow:hidden;
+  background:
+    radial-gradient(circle at 6% 8%,rgba(43,148,184,.30),transparent 36%),
+    radial-gradient(circle at 96% 92%,rgba(11,106,134,.20),transparent 40%),
+    linear-gradient(180deg,#f1f1f1 0%,var(--ice) 100%)}
+
+/* dot grid */
+.glance::before{content:"";position:absolute;right:6%;bottom:260px;width:320px;height:230px;
+  background-image:radial-gradient(rgba(11,106,134,.38) 1.6px,transparent 1.8px);
+  background-size:22px 22px;
+  -webkit-mask-image:radial-gradient(closest-side,#000 40%,transparent 100%);
+          mask-image:radial-gradient(closest-side,#000 40%,transparent 100%);
+  pointer-events:none}
+
+/* concentric rings, slowly drifting */
+.glance::after{content:"";position:absolute;right:-90px;bottom:-110px;width:380px;height:380px;border-radius:50%;
+  border:2px solid rgba(43,148,184,.3);
+  box-shadow:0 0 0 46px rgba(43,148,184,.07),0 0 0 92px rgba(43,148,184,.05),0 0 0 138px rgba(43,148,184,.03);
+  animation:glFloat 14s ease-in-out infinite;
+  pointer-events:none}
+@keyframes glFloat{0%,100%{transform:translate(0,0)}50%{transform:translate(-18px,-24px)}}
+.glance .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.35fr 1fr;gap:56px;align-items:start}
+
+.gl-points{list-style:none;display:grid;gap:10px;margin:22px 0 26px}
+.gl-points li{display:flex;align-items:center;gap:12px;font-weight:500}
+.gl-points li::before{content:"";flex:none;width:22px;height:22px;border-radius:50%;background:var(--mid) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/12px no-repeat}
+
+.gl-video{position:relative;margin-top:32px;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:4px solid #fff;background:var(--deep);box-shadow:10px 10px 0 var(--sky)}
+.gl-video video{width:100%;height:100%;object-fit:cover}
+.gl-chip{position:absolute;left:14px;top:14px;z-index:2;padding:5px 14px;border-radius:30px;background:rgba(5,71,91,.85);color:#fff;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;pointer-events:none}
+
+.gl-lead{margin-bottom:26px;padding-left:18px;border-left:5px solid var(--sky);font-size:18px;font-weight:500;color:var(--deep)}
+.gl-stats{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.gl-stat{background:#fff;border-radius:14px;padding:24px 22px;border-bottom:5px solid var(--sky);box-shadow:0 6px 20px rgba(5,71,91,.08);transition:transform .3s,box-shadow .3s,border-color .3s}
+.gl-stat:hover{transform:translateY(-6px);box-shadow:6px 6px 0 #1b7fa3;border-bottom-color:var(--deep)}
+.gl-ico{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;margin-bottom:14px;background:linear-gradient(135deg,var(--deep),var(--sky))}
+.gl-ico svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.gl-stat b{display:block;font-size:42px;line-height:1.1;color:var(--mid)}
+.gl-stat span{font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#3b5560}
+
+@media(max-width:600px){
+  .glance{padding:70px 0}
+  .gl-video{box-shadow:6px 6px 0 var(--sky)}
+    .glance::before{display:none}
+  .glance::after{width:240px;height:240px;right:-80px;bottom:-80px}
+}
+@media(max-width:420px){.gl-stats{grid-template-columns:1fr}}
+.glance h2,.programs h2,.excel h2,.values h2,.news h2{font-size:clamp(32px,4.5vw,46px);color:var(--deep);margin-bottom:18px}
+
+/* excellence + carousels */
+.excel{background:#fff;padding:80px 0}
+.excel .head{display:flex;justify-content:space-between;gap:30px;align-items:center;flex-wrap:wrap;margin-bottom:30px}
+.excel p{max-width:700px}
+.car{position:relative;margin-bottom:26px}
+.track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.track img{flex:0 0 calc((100% - 32px)/3);scroll-snap-align:start;border-radius:6px;aspect-ratio:4/5;object-fit:cover}
+.track.four img{flex-basis:calc((100% - 48px)/4);aspect-ratio:1}
+.cbtn{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:0;background:var(--deep);color:#fff;font-size:22px;cursor:pointer;z-index:2}
+.cbtn.p{left:-12px}.cbtn.n{right:-12px}
+
+/* ================= SHARED ================= */
+.eyebrow{display:inline-block;margin-bottom:14px;padding:6px 18px;border-radius:30px;background:#fff;color:var(--mid);font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;box-shadow:0 2px 10px rgba(5,71,91,.12)}
+
+/* ================= PROGRAMS ================= */
+.programs{position:relative;padding:90px 0;overflow:hidden;color:#fff;
+  background:
+    radial-gradient(circle at 92% 6%,rgba(43,148,184,.50),transparent 38%),
+    radial-gradient(circle at 4% 96%,rgba(43,148,184,.32),transparent 42%),
+    linear-gradient(160deg,#05475b 0%,#0a5f78 100%)}
+
+/* dot grid, top-left */
+.programs::before{content:"";position:absolute;left:3%;top:60px;width:300px;height:210px;
+  background-image:radial-gradient(rgba(255,255,255,.30) 1.6px,transparent 1.8px);
+  background-size:22px 22px;
+  -webkit-mask-image:radial-gradient(closest-side,#000 35%,transparent 100%);
+          mask-image:radial-gradient(closest-side,#000 35%,transparent 100%);
+  pointer-events:none}
+
+/* rings, top-right */
+.programs::after{content:"";position:absolute;right:-130px;top:-130px;width:360px;height:360px;border-radius:50%;
+  border:2px solid rgba(255,255,255,.16);
+  box-shadow:0 0 0 46px rgba(255,255,255,.05),0 0 0 92px rgba(255,255,255,.035);
+  pointer-events:none}
+
+.programs .wrap{position:relative;z-index:1}
+.pg-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:46px}
+.pg-intro{max-width:640px}
+.programs .pg-intro h2{color:#fff}
+.pg-intro p{opacity:.9}
+.pg-stats{display:flex;gap:16px}
+.pg-stat{background:#fff;border-radius:12px;padding:16px 28px;text-align:center;border-bottom:4px solid var(--sky);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.pg-stat b{display:block;font-size:40px;color:var(--mid);line-height:1.1}
+.pg-stat span{font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#3b5560}
+
+.pg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.pg-card{position:relative;display:flex;flex-direction:column;min-height:310px;padding:30px 26px;border-radius:14px;overflow:hidden;color:#fff;
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.22);
+  border-top:4px solid #7cc4e0;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  transition:transform .3s,box-shadow .3s,background .3s}
+.pg-card::before{content:"";position:absolute;right:-70px;top:-70px;width:200px;height:200px;border-radius:50%;border:34px solid rgba(255,255,255,.07);transition:transform .5s}
+.pg-card>*{position:relative}
+.pg-card>.pg-num{position:absolute;right:18px;bottom:2px;font-size:88px;font-weight:700;line-height:1;color:rgba(255,255,255,.12)}
+.pg-card:hover{transform:translateY(-8px);background:rgba(255,255,255,.17);box-shadow:8px 8px 0 var(--sky)}
+.pg-card:hover::before{transform:scale(1.4)}
+.pg-ico{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.18);margin-bottom:22px}
+.pg-ico svg,.pg-more svg{fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pg-ico svg{width:28px;height:28px}
+.pg-card h3{font-size:22px;margin-bottom:8px}
+.pg-card p{font-size:15px;opacity:.92;margin-bottom:18px}
+.pg-more{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase}
+.pg-more svg{width:18px;height:18px;transition:transform .3s}
+.pg-card:hover .pg-more svg{transform:translateX(6px)}
+
+/* button on the dark background */
+.programs .btn{background:#fff;color:var(--deep);border-color:#fff}
+.programs .btn:hover{background:var(--ice)}
+
+/* ================= VALUES ================= */
+.values{position:relative;padding:90px 0;background:var(--ice);overflow:hidden}
+.values::before{content:"";position:absolute;width:460px;height:460px;bottom:-200px;left:-140px;border-radius:50%;background:radial-gradient(circle,rgba(11,106,134,.2),transparent 70%);pointer-events:none}
+.values .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:center}
+.vl-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.vl-card{position:relative;overflow:hidden;padding:28px 24px;background:#fff;border-radius:14px;border-top:5px solid var(--sky);box-shadow:0 6px 20px rgba(5,71,91,.08);transition:transform .3s,box-shadow .3s,border-color .3s}
+.vl-card::after{content:attr(data-n);position:absolute;right:16px;bottom:-6px;font-size:78px;font-weight:700;line-height:1;color:rgba(11,106,134,.07);pointer-events:none}
+.vl-card:hover{transform:translateY(-8px);box-shadow:6px 6px 0 #1b7fa3;border-top-color:var(--deep)}
+.vl-ico{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;margin-bottom:18px;background:linear-gradient(135deg,var(--deep),var(--sky))}
+.vl-ico svg{width:26px;height:26px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.vl-card h3{font-size:22px;color:var(--deep)}
+.vl-card small{display:block;margin:2px 0 10px;color:var(--mid);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase}
+.vl-card p{font-size:15px;color:#3b5560}
+
+/* ================= NEWS ================= */
+.news{position:relative;padding:90px 0;text-align:center;overflow:hidden;color:#fff;
+  background:
+    radial-gradient(circle at 12% 12%,rgba(43,148,184,.38),transparent 40%),
+    radial-gradient(circle at 92% 88%,rgba(27,127,163,.32),transparent 42%),
+    linear-gradient(135deg,#03293a 0%,#05475b 55%,#0a5f78 100%)}
+
+/* diagonal light beams */
+.news::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(115deg,transparent 0 30%,rgba(255,255,255,.05) 30% 38%,transparent 38% 100%),
+    linear-gradient(115deg,transparent 0 55%,rgba(255,255,255,.035) 55% 60%,transparent 60% 100%)}
+
+/* dot grid, bottom-left */
+.news::after{content:"";position:absolute;left:3%;bottom:50px;width:300px;height:210px;pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.28) 1.6px,transparent 1.8px);
+  background-size:22px 22px;
+  -webkit-mask-image:radial-gradient(closest-side,#000 35%,transparent 100%);
+          mask-image:radial-gradient(closest-side,#000 35%,transparent 100%)}
+
+.news .wrap{position:relative;z-index:1}
+.news .wrap::before{content:"";position:absolute;right:-180px;top:-150px;width:340px;height:340px;border-radius:50%;pointer-events:none;
+  border:2px solid rgba(255,255,255,.14);
+  box-shadow:0 0 0 46px rgba(255,255,255,.05),0 0 0 92px rgba(255,255,255,.03)}
+
+.news-head{margin-bottom:40px}
+.news .news-head h2{color:#fff}
+.news-head p{max-width:560px;margin:auto;color:rgba(255,255,255,.88)}
+
+/* slider frame and button on the dark background */
+.news .slider{box-shadow:10px 10px 0 var(--sky),0 24px 60px rgba(0,0,0,.45)}
+.news .wrap>.btn{background:#fff;color:var(--deep);border-color:#fff}
+.news .wrap>.btn:hover{background:var(--ice)}
+
+.slider{position:relative;height:460px;margin-bottom:36px;border-radius:16px;overflow:hidden;background:var(--deep);border:4px solid #fff;box-shadow:10px 10px 0 var(--sky)}
+.slide{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:40px 90px;
+  color:#fff;
+  background:var(--deep) center/cover;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .8s;
+}
+
+.slide.on{
+  opacity:1;
+  pointer-events:auto;
+  z-index:2;
+}
+.slide::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,71,91,.35),rgba(5,71,91,.82))}
+.slide::after{content:"";position:absolute;right:-120px;top:-120px;width:380px;height:380px;border-radius:50%;border:50px solid rgba(255,255,255,.07);pointer-events:none}
+.slide *{position:relative}
+.slide .tag{display:inline-block;margin-bottom:16px;padding:5px 16px;border-radius:30px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.5);font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase}
+.slide h3{font-size:clamp(24px,3.5vw,38px);max-width:850px;margin-bottom:12px}
+.slide p{max-width:700px;margin-bottom:22px}
+.slide h3,.slide p{text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.slide>*{opacity:0;transform:translateY(40px);transition:opacity .4s ease,transform 0s .8s}
+.slide.on>*{opacity:1;transform:translateY(0);transition:opacity .8s ease,transform .8s ease}
+.slide.on>.tag{transition-delay:.1s}
+.slide.on>h3{transition-delay:.25s}
+.slide.on>p{transition-delay:.45s}
+.slide.on>a{transition-delay:.65s}
+.slide>a{display:inline-block}
+
+.arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:54px;height:54px;padding:0 0 5px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55);background:rgba(255,255,255,.14);color:#fff;font-size:34px;line-height:1;display:grid;place-items:center;cursor:pointer;transition:background .25s,color .25s,transform .25s}
+.arrow:hover{background:#fff;color:var(--deep);transform:translateY(-50%) scale(1.08)}
+.arrow.prev{left:18px}
+.arrow.next{right:18px}
+
+.dots{position:absolute;bottom:22px;left:0;right:0;display:flex;justify-content:center;gap:10px;z-index:3}
+.dots button{position:relative;overflow:hidden;width:10px;height:10px;padding:0;border:0;border-radius:10px;background:rgba(255,255,255,.45);cursor:pointer;transition:width .4s}
+.dots button.on{width:44px}
+.dots button.on::after{content:"";position:absolute;inset:0;background:#fff;transform-origin:left;animation:dotFill 5s linear forwards}
+@keyframes dotFill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+/* responsive for these three sections */
+@media(max-width:1100px){.pg-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){
+  .pg-grid,.vl-grid{grid-template-columns:1fr}
+  .programs,.values,.news{padding:70px 0}
+    .programs::before{display:none}
+      .news::after{display:none}
+  .news .wrap::before{display:none}
+  .slider{height:430px;box-shadow:6px 6px 0 var(--sky)}
+  .slide{padding:40px 58px}
+  .arrow{width:42px;height:42px;font-size:26px}
+  .arrow.prev{left:8px}
+  .arrow.next{right:8px}
+}
+
+/* ================= CONTACT ================= */
+.contact{position:relative;padding:90px 0;background:var(--ice);overflow:hidden}
+.contact::before,.contact::after{content:"";position:absolute;border-radius:50%;z-index:0;pointer-events:none}
+.contact::before{width:420px;height:420px;top:-140px;left:-120px;background:radial-gradient(circle,rgba(43,148,184,.28),transparent 70%)}
+.contact::after{width:520px;height:520px;bottom:-200px;right:-160px;background:radial-gradient(circle,rgba(11,106,134,.2),transparent 70%)}
+.contact .wrap{position:relative;z-index:1}
+
+/* heading */
+.ct-head{text-align:center;margin-bottom:46px}
+.ct-eyebrow{display:inline-block;margin-bottom:14px;padding:6px 18px;border-radius:30px;background:#fff;color:var(--mid);font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;box-shadow:0 2px 10px rgba(5,71,91,.12)}
+.ct-head h2{font-size:clamp(34px,5vw,54px);color:var(--deep);margin-bottom:10px}
+.ct-head p{max-width:560px;margin:auto;color:#3b5560}
+
+/* cards + map */
+.ct-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:34px;margin-bottom:44px;align-items:stretch}
+.ct-cards{display:grid;gap:16px;align-content:center}
+.ct-card{display:flex;align-items:center;gap:18px;padding:20px 22px;background:#fff;color:inherit;border-radius:12px;border-left:5px solid var(--sky);box-shadow:0 6px 20px rgba(5,71,91,.08);transition:transform .3s,box-shadow .3s,border-color .3s}
+.ct-card:hover{transform:translateY(-6px);box-shadow:6px 6px 0 #1b7fa3;border-left-color:var(--deep)}
+.ct-ico{flex:none;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--deep),var(--sky))}
+.ct-ico svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ct-card small{display:block;color:var(--mid);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;line-height:1.4}
+.ct-card .val{display:block;font-weight:500;color:var(--ink);overflow-wrap:anywhere;line-height:1.45}
+
+.ct-map{position:relative;min-height:440px;border-radius:14px;overflow:hidden;border:4px solid #fff;box-shadow:10px 10px 0 var(--sky);background:var(--deep)}
+.ct-map iframe{display:block;width:100%;height:100%;min-height:440px;border:0}
+.ct-dir{position:absolute;left:16px;bottom:16px;font-size:14px;padding:.4em 1.2em;border-color:#fff;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+
+/* message panel */
+.ct-form-wrap{display:grid;grid-template-columns:1fr 1.4fr;border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(5,71,91,.28)}
+.ct-side{position:relative;overflow:hidden;padding:50px 40px;color:#fff;background:linear-gradient(160deg,var(--deep),var(--mid))}
+.ct-side::before{content:"";position:absolute;right:-90px;bottom:-90px;width:280px;height:280px;border-radius:50%;border:44px solid rgba(255,255,255,.07)}
+.ct-side::after{content:"";position:absolute;left:-60px;top:-60px;width:160px;height:160px;border-radius:50%;background:rgba(43,148,184,.35)}
+.ct-side>*{position:relative;z-index:1}
+.ct-side h3{font-size:clamp(26px,3.2vw,36px);margin-bottom:12px}
+.ct-side p{opacity:.92;margin-bottom:22px}
+.ct-chips{display:flex;flex-wrap:wrap;gap:10px}
+.ct-chips span{padding:6px 16px;border:1px solid rgba(255,255,255,.45);border-radius:30px;font-size:13px;font-weight:500;letter-spacing:1px}
+
+.ct-form{display:grid;gap:16px;padding:46px 40px;background:#fff}
+.ct-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ct-form input,.ct-form textarea{width:100%;padding:15px 18px;border:1.5px solid #cfdde3;border-radius:8px;background:var(--ice);color:var(--ink);font:16px 'Montserrat',sans-serif;transition:border-color .25s,box-shadow .25s,background .25s}
+.ct-form input:focus,.ct-form textarea:focus{outline:0;background:#fff;border-color:var(--sky);box-shadow:0 0 0 4px rgba(43,148,184,.18)}
+.ct-form textarea{min-height:150px;resize:vertical}
+.ct-form .btn{justify-self:start;display:inline-flex;align-items:center;gap:10px;border-color:var(--deep)}
+.ct-form .btn:hover{border-color:var(--deep)}
+.ct-form .btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hp{display:none}
+.ct-status{min-height:1.4em;color:var(--deep);font-weight:600}
+
+/* scroll fade-up */
+.js .reveal{opacity:0;transform:translateY(32px);transition:opacity .8s ease,transform .8s ease}
+.js .reveal.in{opacity:1;transform:none}
+.js .ct-map.reveal{transition-delay:.15s}
+
+@media(max-width:980px){
+  .ct-grid,.ct-form-wrap{grid-template-columns:1fr}
+  .ct-map,.ct-map iframe{min-height:340px}
+}
+@media(max-width:600px){
+  .ct-row{grid-template-columns:1fr}
+  .ct-side,.ct-form{padding:32px 24px}
+  .ct-map{box-shadow:6px 6px 0 var(--sky)}
+  .contact{padding:70px 0}
+}
+@media(prefers-reduced-motion:reduce){.glance::after{animation:none}}
+/* footer */
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+  position:relative;
+  background:var(--deep);
+  color:#fff;
+  padding:72px 0 0;
+  overflow:hidden;
+}
+
+/* subtle science-inspired background */
+footer::before{
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  right:-180px;
+  bottom:-260px;
+  border:1px solid rgba(124,196,224,.12);
+  border-radius:50%;
+  box-shadow:
+    0 0 0 55px rgba(124,196,224,.035),
+    0 0 0 110px rgba(124,196,224,.025),
+    0 0 0 165px rgba(124,196,224,.018);
+  pointer-events:none;
+}
+
+footer .wrap{
+  position:relative;
+  z-index:1;
+}
+
+/* main footer columns */
+.fgrid{
+  display:grid;
+  grid-template-columns:1.8fr 1fr 1fr;
+  gap:70px;
+}
+
+/* school identity */
+.footer-brand{
+  max-width:480px;
+}
+
+.logos{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:25px;
+}
+
+.logos img{
+  width:82px;
+  height:82px;
+  object-fit:contain;
+}
+
+/* school logo slightly larger */
+.logos img:first-child{
+  width:92px;
+  height:92px;
+}
+
+.footer-school-name{
+  font-size:24px;
+  font-weight:700;
+  line-height:1.2;
+  margin-bottom:6px;
+}
+
+.footer-division{
+  color:#9fdcf2;
+  font-size:14px;
+  font-weight:500;
+  letter-spacing:.4px;
+  margin-bottom:24px;
+}
+
+/* contact information */
+.footer-contact{
+  display:grid;
+  gap:10px;
+  color:rgba(255,255,255,.78);
+  font-size:15px;
+}
+
+.footer-contact p{
+  margin:0;
+}
+
+/* headings */
+footer h4{
+  position:relative;
+  color:#fff;
+  font-size:19px;
+  font-weight:700;
+  margin:0 0 22px;
+  padding-bottom:12px;
+}
+
+footer h4::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:42px;
+  height:2px;
+  background:#7cc4e0;
+}
+
+/* links */
+.footer-links{
+  display:grid;
+  gap:12px;
+}
+
+.footer-links a{
+  display:inline-flex;
+  width:max-content;
+  color:rgba(255,255,255,.78);
+  text-decoration:none;
+  transition:
+    color .25s ease,
+    transform .25s ease;
+}
+
+.footer-links a::before{
+  content:"›";
+  color:#7cc4e0;
+  margin-right:9px;
+  transition:transform .25s ease;
+}
+
+.footer-links a:hover{
+  color:#fff;
+  transform:translateX(4px);
+}
+
+.footer-links a:hover::before{
+  transform:translateX(3px);
+}
+
+/* social links */
+.footer-social{
+  display:grid;
+  gap:12px;
+}
+
+.footer-social a{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  color:rgba(255,255,255,.78);
+  text-decoration:none;
+  transition:
+    color .25s ease,
+    transform .25s ease;
+}
+
+.footer-social a:hover{
+  color:#fff;
+  transform:translateX(4px);
+}
+
+.social-dot{
+  width:30px;
+  height:30px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(124,196,224,.45);
+  border-radius:50%;
+  color:#9fdcf2;
+  font-size:12px;
+  font-weight:700;
+}
+
+/* copyright area */
+.copy{
+  border-top:1px solid rgba(255,255,255,.14);
+  margin-top:60px;
+  padding:22px 0 26px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  color:rgba(255,255,255,.58);
+  font-size:13px;
+}
+
+.copy-links{
+  display:flex;
+  gap:20px;
+}
+
+.copy-links a{
+  color:rgba(255,255,255,.58);
+  text-decoration:none;
+}
+
+.copy-links a:hover{
+  color:#fff;
+}
+
+/* CTA BAR */
+.sticky{
+  position:relative;
+  background:var(--mid);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:16px;
+  padding:26px 20px;
+  flex-wrap:wrap;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+
+.sticky::before{
+  content:"Ready to take the next step?";
+  color:rgba(255,255,255,.72);
+  font-size:14px;
+  font-weight:500;
+  margin-right:8px;
+}
+
+.sticky .btn{
+  min-width:230px;
+  text-align:center;
+}
+
+/* mobile */
+@media(max-width:980px){
+
+  .fgrid{
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+  }
+
+  .footer-brand{
+    grid-column:1 / -1;
+  }
+
+  .copy{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+@media(max-width:600px){
+
+  footer{
+    padding-top:55px;
+  }
+
+  .fgrid{
+    grid-template-columns:1fr;
+    gap:38px;
+  }
+
+  .footer-brand{
+    grid-column:auto;
+  }
+
+  .logos{
+    justify-content:flex-start;
+  }
+
+  .copy{
+    text-align:center;
+    align-items:center;
+  }
+
+  .copy-links{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .sticky::before{
+    width:100%;
+    text-align:center;
+    margin:0 0 4px;
+  }
+
+  .sticky .btn{
+    width:100%;
+    min-width:0;
+  }
+}
+@media(max-width:980px){
+ .quick .wrap,.glance .wrap,.values .wrap,.fgrid,.prog-head{grid-template-columns:1fr}
+ .grid4,.cards{grid-template-columns:1fr 1fr}
+ .track img{flex-basis:calc((100% - 16px)/2)}
+ .menu-btn{display:block}
+ nav ul{display:none;flex-direction:column}
+ nav ul.open{display:flex}
+ nav li ul{position:static;display:flex;border:0;padding-left:16px}
+ .top .btn{display:none}
+}
+@media(max-width:600px){
+ .grid4,.cards,.vlist{grid-template-columns:1fr}
+ .track img,.track.four img{flex-basis:100%}
+ .stat,.right{text-align:center}
+.hero h1{text-align:center}.hero .wrap{text-align:center}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+/* =========================================================
+   TCSHS SCROLLBAR
+   ========================================================= */
+
+html{
+  scrollbar-width:thin;
+  scrollbar-color:#79bfd8 #102f3f;
+}
+
+/* Chrome / Edge / Safari */
+::-webkit-scrollbar{
+  width:9px;
+}
+
+::-webkit-scrollbar-track{
+  background:#102f3f;
+}
+
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(
+    180deg,
+    #8bd1e8,
+    #4d91aa
+  );
+  border-radius:999px;
+  border:2px solid #102f3f;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background:#a8e2f3;
+}
+</style>
+<link rel="stylesheet" href="hero-upgrade.css">
+</head>
+<body class="intro-active">
+
+<!-- ============ INTRO LOADER ============ -->
+<div id="intro-loader">
+  <img src="images/tcshs-intro.png"
+       alt="Toledo City Science High School"
+       class="intro-image shimmer-mask">
+</div>
+
+<div id="site">
+<!-- ============ HEADER ============ -->
+<header>
+ <div class="top">
+  <img src="images/tcshs-logo-white.png" alt="Toledo City Science High School logo">
+  <div class="brand">Toledo City Science High School<small>Division of Toledo City</small></div>
+  <a class="btn light" href="#4-steps">Apply for Admission</a>
+  <a class="btn light" href="#" target="_blank" rel="noopener">Student &amp; Teacher Portal</a>
+<button
+  class="menu-btn"
+  id="menu-btn"
+  aria-label="Open menu"
+  aria-expanded="false"
+  aria-controls="menu">
+  &#9776;
+</button>
+</div>
+ <nav>
+  <ul id="menu">
+   <li><a href="#home">Home</a></li>
+   <li><a href="#about">About</a>
+    <ul>
+     <li><a href="#about">About TCSHS</a></li>
+     <li><a href="#">School Administration</a></li>
+     <li><a href="#">Faculty &amp; Staff</a></li>
+     <li><a href="#">School Vision &amp; Mission</a></li>
+    </ul></li>
+   <li><a href="#programs">Academics</a>
+    <ul>
+     <li><a href="#">Academic Calendar</a></li>
+     <li><a href="#programs">Junior High School</a></li>
+     <li><a href="#programs">Senior High School</a></li>
+     <li><a href="#">Research &amp; Innovation</a></li>
+     <li><a href="#">Online Learning (LMS)</a></li>
+    </ul></li>
+   <li><a href="#4-steps">Admissions</a></li>
+   <li><a href="#">Services &amp; Resources</a>
+    <ul>
+     <li><a href="#">Library</a></li>
+     <li><a href="#">Guidance Office</a></li>
+     <li><a href="#">Student Affairs</a></li>
+     <li><a href="#">Science Laboratories</a></li>
+    </ul></li>
+   <li><a href="#news">News &amp; Events</a></li>
+   <li><a href="#contact">Contact Us</a></li>
+  </ul>
+ </nav>
+</header>
+
+<main id="home">
+<!-- ============ HERO ============ -->
+<section class="hero">
+   <video loop muted playsinline preload="auto" poster="images/hero-poster.jpg">  
+    <source src="videos/hero.mp4" type="video/mp4" />
+ </video>
+ <div class="wrap">
+  <h1>The <strong>SCIENCE</strong> of your bright future starts here</h1>
+  <a class="btn" href="#4-steps">Apply Now</a>
+ </div>
+</section>
+
+<!-- ============ QUICK LINKS ============ -->
+<section class="quick">
+ <div class="wrap">
+  <a href="#4-steps"><span class="ico">&#10095;</span><div><h4>How To Apply</h4><p>Need help applying to TCSHS? Follow our four-step application here.</p></div></a>
+  <a href="#programs"><span class="ico">&#10095;</span><div><h4>Our Academic Programs</h4><p>Find the right level and see why studying with us is different.</p></div></a>
+  <a href="#programs"><span class="ico">&#10095;</span><div><h4>Science &amp; STEM</h4><p>Explore our science, technology, engineering and mathematics focus.</p></div></a>
+ </div>
+</section>
+
+<!-- ============ HOW TO APPLY ============ -->
+<section class="steps" id="4-steps">
+ <div class="wrap">
+  <h2>How To Apply</h2>
+  <p>Applying to Toledo City Science High School in four easy steps.</p>
+  <!-- TODO: confirm exact requirements and schedule with the school -->
+  <div class="grid4">
+   <div class="step"><h4>Step 1</h4><p>Register / Submit Application</p></div>
+   <div class="step"><h4>Step 2</h4><p>Submit Application Requirements</p></div>
+   <div class="step"><h4>Step 3</h4><p>Take the Admission / Entrance Exam</p></div>
+   <div class="step"><h4>Step 4</h4><p>Prepare For An Interview</p></div>
+  </div>
+  <div class="right"><a class="btn ghost" href="#">Learn More &#8594;</a></div>
+ </div>
+</section>
+
+<!-- ============ QUICK GLANCE ============ -->
+<section class="glance" id="about">
+ <div class="wrap">
+
+  <div class="reveal">
+   <span class="eyebrow">About TCSHS</span>
+   <h2>A Quick Glance at TCSHS</h2>
+   <p>Toledo City Science High School is a public science high school in Toledo City, Cebu, under the Division of Toledo City. Since 1996, it has helped young Filipinos grow into curious, capable and responsible scientists.</p>
+
+   <ul class="gl-points">
+    <li>Focus on science, technology, engineering and mathematics</li>
+    <li>Research and innovation opportunities for students</li>
+    <li>Learning guided by DepEd core values</li>
+   </ul>
+   <a class="btn" href="#">Learn More About TCSHS</a>
+
+   <!-- TODO: replace with your school video (mp4) -->
+   <div class="gl-video">
+    <span class="gl-chip">Campus Video</span>
+    <video controls poster="images/intro-poster.png">
+     <source src="videos/tcshs-intro.mp4" type="video/mp4" />
+    </video>
+   </div>
+  </div>
+
+  <div class="reveal">
+   <p class="gl-lead">Nurturing a culture of excellence in science, technology, engineering and mathematics education.</p>
+
+   <!-- TODO: confirm these numbers with the school -->
+   <div class="gl-stats">
+    <div class="gl-stat">
+     <span class="gl-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+     <b>1996</b><span>Year of Founding</span>
+    </div>
+    <div class="gl-stat">
+     <span class="gl-ico"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span>
+     <b data-to="2500" data-suf="+">2,500+</b><span>Alumni</span>
+    </div>
+    <div class="gl-stat">
+     <span class="gl-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+     <b data-to="800" data-suf="+">800+</b><span>Active Students</span>
+    </div>
+    <div class="gl-stat">
+     <span class="gl-ico"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+     <b data-to="60" data-suf="+">60+</b><span>Faculty &amp; Staff</span>
+    </div>
+   </div>
+  </div>
+
+ </div>
+</section>
+
+<!-- ============ PROGRAMS ============ -->
+<section class="programs" id="programs">
+ <div class="wrap">
+
+  <div class="pg-head reveal">
+   <div class="pg-intro">
+    <span class="eyebrow">Academics</span>
+    <h2>Study at TCSHS</h2>
+    <p>At Toledo City Science High School, we prepare students to become competent, ethical and globally competitive in science and beyond.</p>
+   </div>
+   <div class="pg-stats">
+    <div class="pg-stat"><b>4</b><span>STEM Fields</span></div>
+    <div class="pg-stat"><b>00+</b><span>Clubs &amp; Programs</span></div>
+   </div>
+  </div>
+
+  <div class="pg-grid reveal">
+
+   <a class="pg-card" href="#">
+    <span class="pg-num">01</span>
+    <span class="pg-ico"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+    <h3>Junior High School</h3>
+    <p>Build a strong foundation in science and mathematics.</p>
+    <span class="pg-more">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+   </a>
+
+   <a class="pg-card" href="#">
+    <span class="pg-num">02</span>
+    <span class="pg-ico"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span>
+    <h3>Senior High School</h3>
+    <p>Specialize and get ready for college and careers in STEM.</p>
+    <span class="pg-more">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+   </a>
+
+   <a class="pg-card" href="#">
+    <span class="pg-num">03</span>
+    <span class="pg-ico"><svg viewBox="0 0 24 24"><path d="M9 2h6M10 2v6L4 19a2 2 0 0 0 1.8 3h12.4A2 2 0 0 0 20 19l-6-11V2"/><path d="M7 15h10"/></svg></span>
+    <h3>Science Curriculum</h3>
+    <p>Hands-on learning in laboratories, experiments and real problems.</p>
+    <span class="pg-more">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+   </a>
+
+   <a class="pg-card" href="#">
+    <span class="pg-num">04</span>
+    <span class="pg-ico"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg></span>
+    <h3>Research &amp; Innovation</h3>
+    <p>Turn curiosity into projects, inventions and competitions.</p>
+    <span class="pg-more">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+   </a>
+
+  </div>
+
+  <div class="right" style="margin-top:34px"><a class="btn" href="#4-steps">Apply Today</a></div>
+ </div>
+</section>
+
+<!-- ============ EXCELLENCE ============ -->
+<section class="excel">
+ <div class="wrap">
+  <div class="head">
+   <div><h2>A Culture of Excellence</h2><p>The achievements of our students in science, mathematics, research and competitions reflect TCSHS’s commitment to excellence.</p></div>
+   <a class="btn" href="#4-steps">Be Part of TCSHS</a>
+  </div>
+  <!-- TODO: replace placeholders with achievement photos -->
+  <div class="car"><button class="cbtn p" aria-label="Previous">&#8249;</button>
+   <div class="track">
+    <img src="https://placehold.co/600x750/05475b/ffffff?text=Achiever+1" alt="Student achiever 1" />
+    <img src="https://placehold.co/600x750/0b6a86/ffffff?text=Achiever+2" alt="Student achiever 2" />
+    <img src="https://placehold.co/600x750/2b94b8/ffffff?text=Achiever+3" alt="Student achiever 3" />
+    <img src="https://placehold.co/600x750/05475b/ffffff?text=Achiever+4" alt="Student achiever 4" />
+    <img src="https://placehold.co/600x750/0b6a86/ffffff?text=Achiever+5" alt="Student achiever 5" />
+   </div><button class="cbtn n" aria-label="Next">&#8250;</button></div>
+  <div class="car"><button class="cbtn p" aria-label="Previous">&#8249;</button>
+   <div class="track four">
+    <img src="https://placehold.co/500x500/0b6a86/ffffff?text=Campus+1" alt="School life 1" />
+    <img src="https://placehold.co/500x500/05475b/ffffff?text=Campus+2" alt="School life 2" />
+    <img src="https://placehold.co/500x500/2b94b8/ffffff?text=Campus+3" alt="School life 3" />
+    <img src="https://placehold.co/500x500/0b6a86/ffffff?text=Campus+4" alt="School life 4" />
+    <img src="https://placehold.co/500x500/05475b/ffffff?text=Campus+5" alt="School life 5" />
+    <img src="https://placehold.co/500x500/2b94b8/ffffff?text=Campus+6" alt="School life 6" />
+   </div><button class="cbtn n" aria-label="Next">&#8250;</button></div>
+ </div>
+</section>
+
+<!-- ============ VALUES ============ -->
+<section class="values">
+ <div class="wrap">
+  <div class="reveal">
+   <span class="eyebrow">Our Core Values</span>
+   <h2>Our Shared Values</h2>
+   <p>As a DepEd school, TCSHS upholds the core values of the Department of Education, which guide how we learn, work and serve.</p>
+   <div style="margin-top:24px"><a class="btn" href="#about">Learn More About Us</a></div>
+  </div>
+
+  <div class="vl-grid reveal">
+   <div class="vl-card" data-n="01">
+    <span class="vl-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg></span>
+    <h3>Maka-Diyos</h3><small>Faith &amp; Integrity</small>
+    <p>We nurture a strong sense of faith, honesty and moral purpose.</p>
+   </div>
+   <div class="vl-card" data-n="02">
+    <span class="vl-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+    <h3>Makatao</h3><small>Respect &amp; Compassion</small>
+    <p>We treat every person with dignity, kindness and respect.</p>
+   </div>
+   <div class="vl-card" data-n="03">
+    <span class="vl-ico"><svg viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+    <h3>Makakalikasan</h3><small>Care for Nature</small>
+    <p>We protect the environment and use science to serve the planet.</p>
+   </div>
+   <div class="vl-card" data-n="04">
+    <span class="vl-ico"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg></span>
+    <h3>Makabansa</h3><small>Love of Country</small>
+    <p>We take pride in being Filipino and serve our community and nation.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ============ NEWS ============ -->
+<section class="news" id="news">
+ <div class="wrap">
+  <div class="news-head reveal">
+   <span class="eyebrow">Latest updates</span>
+   <h2>What’s New at TCSHS</h2>
+   <p>News, announcements and events from around our campus.</p>
+  </div>
+
+  <!-- TODO: replace with real news, photos and links -->
+  <div class="slider reveal">
+   <div class="slide on" style="background-image:url('images/news1.png')"><span class="tag">MATHELETES' TRIUMPH</span><h3>TCSHS Mathletes Rise at PCMC 2026</h3><p>Toledo City Science High School mathletes earned top placements across the Grade 7, Grade 8, and Senior High School categories at the PAMES–CASIO Math Challenge Division Level on September 26, 2026, in Minglanilla, Cebu.</p>
+<a class="btn" href="https://www.facebook.com/share/p/1d3AdEgKp2/" target="_blank" rel="noopener noreferrer">Read More</a>
+  </div>
+<div class="slide"
+     style="background-image:url('images/nsef-grand-award.png')">
+
+  <span class="tag">SCIENCE NEWS VIDEO REPORT</span>
+
+  <h3>TCSHS Students Earn 1st Grand Award at NSEF 2026</h3>
+
+  <p>
+    TCSHS students secured the 1st Grand Award in the Science News Video
+    Report Challenge at the National Science &amp; Engineering Fair.
+  </p>
+
+  <a class="btn"
+     href="#"
+     target="_blank"
+     rel="noopener noreferrer">
+    Read More
+  </a>
+
+</div>
+<div class="slide" style="background-image:url('images/principal-welcome.jpg')">
+
+    <span class="tag">NEW BEGINNING</span>
+
+    <h3>TCSHS Welcomes New School Principal</h3>
+
+    <p>
+        Toledo City Science High School proudly welcomes
+        <strong>Mrs. Lifejeana Jesusa H. Longakit</strong> as its new school principal.
+        The TCSHS community looks forward to a collaborative and innovative school
+        year under her leadership.
+    </p>
+
+    <a class="btn"
+       href="YOUR-POST-LINK-HERE"
+       target="_blank"
+       rel="noopener noreferrer">
+        Read More
+    </a>
+
+</div>   
+<button class="arrow prev" id="prev" aria-label="Previous slide">&#8249;</button>
+   <button class="arrow next" id="next" aria-label="Next slide">&#8250;</button>
+   <div class="dots" id="dots"></div>
+  </div>
+
+  <a class="btn" href="#">See All News &amp; Events</a>
+ </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+ <div class="wrap">
+
+  <div class="ct-head"> 
+   <span class="ct-eyebrow">Get in touch</span>
+   <h2>Contact Us</h2>
+   <p>Questions about admissions, programs or campus visits? Reach out. We are happy to help.</p>
+  </div>
+
+  <div class="ct-grid">
+   <div class="ct-cards reveal">
+
+    <a class="ct-card" href="https://www.google.com/maps/search/?api=1&amp;query=Toledo+City+Science+High+School" target="_blank" rel="noopener">
+     <span class="ct-ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+     <div><small>Visit us</small><span class="val">Ilihan Heights, Toledo City, Cebu, Philippines</span></div>
+    </a>
+
+    <a class="ct-card" href="tel:+63323843925">
+     <span class="ct-ico"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+     <div><small>Call us</small><span class="val">(032) 384-3925</span></div>
+    </a>
+
+    <a class="ct-card" href="mailto:303315toledocitysciencehs@deped.gov.ph">
+     <span class="ct-ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+     <div><small>Email us</small><span class="val">303315toledocitysciencehs@deped.gov.ph</span></div>
+    </a>
+
+    <a class="ct-card" href="https://www.facebook.com/" target="_blank" rel="noopener">
+     <span class="ct-ico"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></span>
+     <div><small>Follow us</small><span class="val">Facebook</span></div>
+    </a>
+
+   </div>
+
+   <div class="ct-map reveal">
+    <iframe title="Map showing Toledo City Science High School"
+     src="https://www.google.com/maps?q=Toledo+City+Science+High+School,+Toledo+City,+Cebu,+Philippines&output=embed"
+     loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    <a class="btn ct-dir" href="https://www.google.com/maps/dir/?api=1&amp;destination=Toledo+City+Science+High+School" target="_blank" rel="noopener">Get Directions</a>
+   </div>
+  </div>
+
+  <div class="ct-form-wrap reveal">
+   <div class="ct-side">
+    <h3>Send Us a Message</h3>
+    <p>Tell us how we can help and we will get back to you as soon as we can.</p>
+    <div class="ct-chips"><span>Admissions</span><span>Programs</span><span>Campus Visit</span></div>
+   </div>
+
+   <form class="ct-form" id="contact-form" action="https://formspree.io/f/xkjglwng" method="POST">
+    <div class="ct-row">
+     <input type="text" name="name" placeholder="Name *" required />
+     <input type="email" name="email" placeholder="E-mail *" required />
+    </div>
+    <input type="tel" name="phone" placeholder="Phone" />
+    <textarea name="message" placeholder="Message *" required></textarea>
+    <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" />
+    <button class="btn" type="submit">Send Message
+     <svg viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>
+    </button>
+    <p class="ct-status" id="form-status" role="status"></p>
+   </form>
+  </div>
+
+ </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+
+  <div class="wrap">
+
+    <div class="fgrid">
+
+      <!-- SCHOOL IDENTITY -->
+      <div class="footer-brand">
+
+        <div class="logos">
+          <img src="images/tcshs-logo-white.png"
+               alt="Toledo City Science High School logo">
+
+          <img src="images/deped-logo.png"
+               alt="Department of Education logo">
+
+          <img src="images/division-logo.png"
+               alt="Schools Division of Toledo City logo">
+        </div>
+
+        <div class="footer-school-name">
+          Toledo City Science High School
+        </div>
+
+        <div class="footer-division">
+          Division of Toledo City
+        </div>
+
+        <div class="footer-contact">
+          <p>📍 Ilihan Heights, Toledo City, Cebu, Philippines</p>
+          <p>✉ 303315toledocitysciencehs@deped.gov.ph</p>
+          <p>☎ (032) 384-3925</p>
+        </div>
+
+      </div>
+
+
+      <!-- NAVIGATION -->
+      <div>
+
+        <h4>Quick Links</h4>
+
+        <div class="footer-links">
+          <a href="#about">About TCSHS</a>
+          <a href="#4-steps">Admissions</a>
+          <a href="#programs">Academics</a>
+          <a href="#">Research</a>
+          <a href="#news">Events &amp; News</a>
+          <a href="#contact">Contact Us</a>
+        </div>
+
+      </div>
+
+
+      <!-- SOCIALS -->
+      <div>
+
+        <h4>Stay Connected</h4>
+
+        <div class="footer-social">
+
+          <a href="https://www.facebook.com/"
+             target="_blank"
+             rel="noopener">
+            <span class="social-dot">f</span>
+            Facebook
+          </a>
+
+          <a href="https://www.instagram.com/"
+             target="_blank"
+             rel="noopener">
+            <span class="social-dot">◎</span>
+            Instagram
+          </a>
+
+          <a href="https://www.tiktok.com/"
+             target="_blank"
+             rel="noopener">
+            <span class="social-dot">♪</span>
+            TikTok
+          </a>
+
+          <a href="mailto:303315toledocitysciencehs@deped.gov.ph">
+            <span class="social-dot">✉</span>
+            Email Us
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- COPYRIGHT -->
+    <div class="copy">
+
+      <span>
+        © 2026 Toledo City Science High School, Division of Toledo City
+      </span>
+
+      <div class="copy-links">
+        <a href="#">Privacy</a>
+        <a href="#">Accessibility</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- ============ STICKY CTA ============ -->
+<div class="sticky">
+
+  <a class="btn"
+     href="#4-steps">
+    Apply for Admission
+  </a>
+
+  <a class="btn"
+     href="#"
+     target="_blank"
+     rel="noopener">
+    Student &amp; Teacher Portal
+  </a>
+
+</div>
+<script>
+// ================= INTRO LOADER =================
+(function(){
+  var loader = document.getElementById('intro-loader');
+  var site   = document.getElementById('site');
+  var MIN_TIME = 4000;          // intro stays 4 seconds
+  var started  = Date.now();
+  var done = false;
+
+  function finish(){
+    if(done) return;
+    done = true;
+    window.scrollTo(0,0);
+    document.body.classList.remove('intro-active');
+
+    // crossfade: intro fades out while the website fades in
+    loader.classList.add('hide');
+    site.classList.add('show');
+
+    // remove the intro after the fade has finished (0.7s)
+    setTimeout(function(){ loader.remove(); }, 900);
+  }
+
+  // wait for the page to load AND for the 4 seconds to pass
+  window.addEventListener('load', function(){
+    var left = Math.max(0, MIN_TIME - (Date.now() - started));
+    setTimeout(finish, left);
+  });
+
+  // safety: never hold visitors longer than 8 seconds
+  setTimeout(finish, 8000);
+})();
+// number counters
+(function(){
+ var els=document.querySelectorAll('[data-to]');
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){
+  if(!e.isIntersecting)return;
+  io.unobserve(e.target);
+  var el=e.target,to=+el.dataset.to,suf=el.dataset.suf||'',n=0,step=Math.max(1,Math.ceil(to/50));
+  var t=setInterval(function(){
+   n=Math.min(to,n+step);
+   el.textContent=n.toLocaleString('en-US')+(n===to?suf:'');
+   if(n>=to)clearInterval(t);
+  },30);
+ });});
+ els.forEach(function(el){io.observe(el);});
+})();
+// carousels
+document.querySelectorAll('.car').forEach(function(c){
+ var tr=c.querySelector('.track');
+ c.querySelector('.p').onclick=function(){tr.scrollBy({left:-tr.clientWidth/2,behavior:'smooth'})};
+ c.querySelector('.n').onclick=function(){tr.scrollBy({left:tr.clientWidth/2,behavior:'smooth'})};
+});
+// news slider
+(function(){
+ var s=document.querySelectorAll('.slide'),box=document.getElementById('dots'),i=0,t;
+ s.forEach(function(_,n){
+  var d=document.createElement('button');
+  d.setAttribute('aria-label','Go to slide '+(n+1));
+  d.onclick=function(){go(n);restart();};
+  box.appendChild(d);
+ });
+ var ds=box.children;
+ function go(n){s[i].classList.remove('on');ds[i].classList.remove('on');i=(n+s.length)%s.length;s[i].classList.add('on');ds[i].classList.add('on');}
+ function restart(){clearInterval(t);t=setInterval(function(){go(i+1)},5000);}
+ document.getElementById('prev').onclick=function(){go(i-1);restart();};
+ document.getElementById('next').onclick=function(){go(i+1);restart();};
+ go(0);restart();
+})();
+// sticky menu
+(function(){
+ var n=document.querySelector('nav'),t=document.querySelector('.top');
+ function check(){n.classList.toggle('stuck',window.scrollY>t.offsetHeight);}
+ window.addEventListener('scroll',check);check();
+})();
+// contact form
+(function(){
+ var f=document.getElementById('contact-form'),s=document.getElementById('form-status');
+ if(!f)return;
+ f.addEventListener('submit',function(e){
+  e.preventDefault();
+  s.textContent='Sending...';
+  fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
+  .then(function(r){
+   if(r.ok){s.textContent='Thank you! Your message has been sent.';f.reset();}
+   else{s.textContent='Sorry, something went wrong. Please try again.';}
+  })
+  .catch(function(){s.textContent='Network error. Please try again.';});
+ });
+})();
+// contact section fade-up
+(function(){
+ document.documentElement.classList.add('js');
+ var els=document.querySelectorAll('.reveal');
+ var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+   if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+  });
+ },{threshold:.15});
+ els.forEach(function(el){io.observe(el);});
+})();
+</script>
+<script src="hero-upgrade.js"></script>
+</body>
+</html>
